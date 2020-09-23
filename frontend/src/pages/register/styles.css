@@ -1,0 +1,104 @@
+.registerContainer{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+}
+.registerBody{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    height: 100%;
+}
+
+.registerForm{
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+}
+
+#cadastroDesktop{
+    display: none;
+}
+
+#cadastroMobile{
+    display: initial;
+}
+
+form{
+    min-width: 70px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+label{
+    font-size: 1.5em;
+}
+
+input{
+    margin-bottom: 15px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    border-radius: 11px;
+    width: 100%;
+    height: 1rem;
+    background-color: #EBEBEB;
+    
+}
+
+button{
+    margin-top: 25px;
+    margin-bottom: 35px;
+    width: 100%;
+    height: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+}
+
+Link{
+    
+}
+
+@media(min-width: 850px)
+{
+    .registerContainer{
+        height: 100vh;
+    }
+    .registerBody{    
+        width: 80%;
+        background-color: white;
+        height: 100%;
+
+        display: flex;
+        justify-content: space-around;
+        align-items: center; 
+    }
+
+    
+    #cadastroDesktop{
+        display: initial;
+    }
+
+    #cadastroMobile{
+        display: none;
+    }
+
+    input{
+        display: flex;
+        
+        min-width: 20vw;
+        height: 1rem;
+    }
+    
+    button{
+        display: flex;
+        justify-content: center;
+        align-items: center; 
+    }
+}
