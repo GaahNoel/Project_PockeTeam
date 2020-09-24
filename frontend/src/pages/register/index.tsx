@@ -28,26 +28,33 @@ export default function Register(){
               
 
                 <div className="registerBody"> 
-                    <h3 id="cadastroMobile">CADASTRO</h3>    
-                        <div className="registerForm">
-                            <form>
-                                <label>Login</label>
-                                <input type="text" value={login} onChange={e => setLogin(e.target.value)}/>
-                                <label>Username</label>
-                                <input type="text" value={username} onChange={e => setUsername(e.target.value)}/>
-                                <label>Email</label>
-                                <input type="text" value={email} onChange={e => setEmail(e.target.value)}/>
-                                <label>Password</label>
-                                <input type="text" value={password} onChange={e => setPassword(e.target.value)}/>
-                                <label>Confirm Password</label>
-                                <input type="text" value={password2} onChange={e => setPassword2(e.target.value)}/>
-
+                    <h3 id="registerMobile">CADASTRO</h3>    
+                    <div className="registerForm">
+                        <form>
+                            <label>Login</label>
+                            <input type="text" value={login} onChange={e => setLogin(e.target.value)}/>
+                            <label>Username</label>
+                            <input type="text" value={username} onChange={e => setUsername(e.target.value)}/>
+                            <label>Email</label>
+                            <input type="text" value={email} onChange={e => setEmail(e.target.value)}/>
+                            <label>Password</label>
+                            <input type="text" value={password} onChange={e => setPassword(e.target.value)}/>
+                            <label>Confirm Password</label>
+                            <input type="text" value={password2} onChange={e => setPassword2(e.target.value)}/>
+                            
+                            <div>
                                 <button type="submit">CRIAR</button>
-                            </form>
-                            <Link to="/Login">VOLTAR</Link>
-                        </div>
+                                <Link to="/Login" id="backButton">VOLTAR</Link>
+                            </div>
+                        </form>
+                       
+                    </div>
 
-                        <h3 id="cadastroDesktop">CADASTRO</h3>
+                    <div>
+                        <h3 id="registerDesktop">CADASTRO</h3>
+                        <h4 id="registerDesktopText">Realize o cadastro e faça parte do PockeTeam,<p>o site desenvolvido de fãs para fãs.</p></h4>
+                    </div>
+                        
                         
                 </div>
         </div>

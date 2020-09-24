@@ -2,13 +2,13 @@ body{
     background-color: #ffffff;
 }
 
-.registerContainer{
+.loginContainer{
     display: flex;
     flex-direction: column;
     align-items: center;
     height: 100vh;
 }
-.registerBody{
+.loginBody{
     
     width: 100%;
     display: flex;
@@ -19,27 +19,27 @@ body{
     height: 100%;
 }
 
-.registerForm{
+.loginForm{
     display: flex;
     flex-direction: column;
     align-items: center; 
 }
 
-#registerDesktop{
+#loginDesktop{
     display: none;
 }
 
-#registerDesktopText{
+#loginDesktopText{
     display: none;
 }
 
-#registerMobile{
+#loginMobile{
     display: initial;
-    font-size: 35px;
+    font-size: 60px;
 }
 
 form{
-    min-width: 70px;
+    min-width: 200px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -78,7 +78,7 @@ button{
 #backButton{
     color: #000000;
     margin-top: 15px;
-    padding: 10.5px 55px;
+    padding: 10.5px 116px;
 
     border: 1px solid #000000;
     text-decoration: none;
@@ -89,24 +89,17 @@ button{
     border-radius: 5px;
 }
 
-@media(min-width: 1050px)
-{
-    #registerDesktopText{
-        font-size: 30px;
-    }
-}
-
 @media(min-width: 850px)
 {
     body{
         background-color: lightgrey;
     }
 
-    .registerContainer{
+    .loginContainer{
         height: 100vh;
     }
 
-    .registerBody{    
+    .loginBody{    
         width: 80%;
         background-color: white;
         height: 100%;
@@ -116,21 +109,20 @@ button{
         justify-content: space-around;
         align-items: center; 
     }
-
     
-    #registerDesktop{
+    #loginDesktop{
         display: block;
         font-size: 50px;
         text-align: center;
     }
 
-    #registerDesktopText{
+    #loginDesktopText{
         display: block;
         text-align: center;
         font-size: 20px;
     }
 
-    #registerMobile{
+    #loginMobile{
         display: none;
     }
 
