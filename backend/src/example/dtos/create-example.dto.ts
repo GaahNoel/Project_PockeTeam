@@ -1,3 +1,5 @@
 export class CreateExampleDto {
-  title: string;
+  name: string;
+  age: number;
+  email: string;
 }

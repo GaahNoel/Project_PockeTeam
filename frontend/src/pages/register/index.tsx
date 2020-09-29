@@ -4,16 +4,35 @@ import {Helmet} from 'react-helmet';
 import {Link, useHistory} from 'react-router-dom'
 import Header from '../../components/header'
 
+import axios from "axios";
+import {useForm} from 'react-hook-form'
+
 import './styles.css'
+
+interface user{
+  login: string;
+  username: string;
+  email: string;
+  password: string;
+  confirmPassword: string;
+}
 
 export default function Register(){
 
-    const [login, setLogin] = useState("");
-    const [username, setUsername] = useState("");
-    const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
-    const [password2, setPassword2] = useState("");
+    const {register, handleSubmit, errors} = useForm();
 
+    const onSubmit = (data: any, e:any) =>{
+        const {login, username, email, password} = data;
+        e.preventDefault();
+        axios.post("http://localhost:3333/users/create", {
+            login,
+            username,
+            email,
+            password
+        }).then(Response => {
+            alert("Enviado com sucesso");
+        });
+    }
 
     return(
         
@@ -30,17 +49,17 @@ export default function Register(){
                 <div className="registerBody"> 
                     <h3 id="registerMobile">CADASTRO</h3>    
                     <div className="registerForm">
-                        <form>
+                        <form onSubmit={handleSubmit(onSubmit)}>
                             <label>Login</label>
-                            <input type="text" value={login} onChange={e => setLogin(e.target.value)}/>
+                            <input type="text" ref={register} name="login"/>
                             <label>Username</label>
-                            <input type="text" value={username} onChange={e => setUsername(e.target.value)}/>
+                            <input type="text" ref={register} name="username"/>
                             <label>Email</label>
-                            <input type="text" value={email} onChange={e => setEmail(e.target.value)}/>
+                            <input type="text" ref={register} name="email"/>
                             <label>Password</label>
-                            <input type="text" value={password} onChange={e => setPassword(e.target.value)}/>
+                            <input type="text" ref={register} name="password"/>
                             <label>Confirm Password</label>
-                            <input type="text" value={password2} onChange={e => setPassword2(e.target.value)}/>
+                            <input type="text" ref={register} name="confirmPassword"/>
                             
                             <div>
                                 <button type="submit">CRIAR</button>
