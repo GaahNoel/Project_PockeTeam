@@ -6,6 +6,7 @@ import { ExampleService } from './example.service';
 @Controller('examples')
 export class ExampleController {
   constructor(private exampleService: ExampleService) {}
+
   @Post('a')
   create(@Body() createExampleDTO: CreateExampleDto): Promise<Example> {
     return this.exampleService.create(createExampleDTO);

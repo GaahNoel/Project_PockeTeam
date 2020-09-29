@@ -1,0 +1,72 @@
+{
+    "env": {
+      "es6": true,
+      "node": true,
+      "jest": true
+    },
+    "extends": [
+      "airbnb-base",
+      "plugin:@typescript-eslint/recommended",
+      "prettier/@typescript-eslint",
+      "plugin:prettier/recommended",
+      "eslint:recommended"
+    ],
+    "globals": {
+      "Atomics": "readonly",
+      "SharedArrayBuffer": "readonly"
+    },
+    "root": true,
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+      "ecmaVersion": 2018,
+      "project": "tsconfig.json",
+      "sourceType": "module"
+    },
+    "plugins": [
+      "@typescript-eslint",
+      "prettier"
+    ],
+    "rules": {
+      "import/prefer-default-export": "off",
+      "no-useless-constructor": "off",
+      "no-underscore-dangle": "off",
+      "prettier/prettier": "error",
+      "class-methods-use-this": "off",
+      "@typescript-eslint/camelcase": "off",
+      "@typescript-eslint/no-unused-vars": ["warn"],
+      "no-unused-vars":"off",
+      "import/extensions": [
+        "error",
+        "ignorePackages",
+        {
+          "ts": "never"
+        }
+      ],
+      "import/no-extraneous-dependencies": "off",
+      "import/no-unresolved": "off",
+      "no-use-before-define":"off",
+      "import/no-named-as-default-member":"off",
+      "import/extensions":"off",
+      "import/no-duplicates": "off",
+      "import/order":"off",
+      "import/no-self-import": "off",
+      "import/no-cycle":"off",
+      "import/no-named-as-default":"off",
+      "import/named":"off",
+      "import/no-useless-path-segments":"off",
+      "@typescript-eslint/explicit-module-boundary-types": "off",
+      "react/prop-types": "off",
+      "react/jsx-props-no-spreading": "off",
+      "arrow-body-style": "off",
+      "implicit-arrow-linebreak": "off",
+      "no-confusing-arrow": "off",
+      "linebreak-style": "off",
+      "no-undef":"warn"
+
+    },
+    "settings": {
+      "import/resolver": {
+        "typescript": {}
+      }
+    }
+  }
