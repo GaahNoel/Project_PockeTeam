@@ -1,0 +1,12 @@
+.selectPokemonContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.selectBody{
+    display:flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}

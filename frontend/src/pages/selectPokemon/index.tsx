@@ -7,85 +7,64 @@ import { useForm } from 'react-hook-form';
 import Header from '../../components/header';
 
 import './styles.css';
+import { error } from 'console';
 
 // import { Container } from './styles';
-interface pokemonTypes {
-    types: object,
-    moves: object,
-    stats: object,
-    sprites: object
-}
-
-interface statsTypes{
-    stat: [{}]
-}
 
 const SelectPokemon: React.FC = () => {
-    
-    const [pokemon, setPokemon] = useState<any | any>({});
+  const [pokemon, setPokemon] = useState<any | any>({});
+  const [pokemonName, setPokemonName] = useState('');
+  const options = [
+    { value: 'charmander', label: 'Charmander' },
+    { value: 'charmeleon', label: 'Charmeleon' },
+  ];
+  const [movesArray, setMovesArray]: any = useState([]);
 
-    const [pokemonName, setPokemonName] = useState("");
+  const changePokemon = (e: any) => {
+    if (e) {
+      axios
+        .get(`https://pokeapi.co/api/v2/pokemon/${e.value}`)
+        .then((response) => {
+          const { types, moves, stats, sprites } = response.data;
 
-    /*useEffect(() => {
-        if(pokemonName)
-        {
-            axios.get(`https://pokeapi.co/api/v2/pokemon/${pokemonName}`).then(Response => {
-            
+          setPokemon({
+            types,
+            moves,
+            stats,
+            sprites,
+          });
 
-            const {types, moves, stats, sprites} = Response.data;
-            setPokemon({
-                    types, moves, stats, sprites
-                }
-            )
+          setPokemonName(e.value);
+          moves.forEach((move: any) => {
+            setMovesArray((oldMoves: any) => [
+              ...oldMoves,
+              { value: move.move.name, label: move.move.name },
+            ]);
+          });
         });
-        }   
-    },[pokemonName])*/ 
+    }
+  };
 
-    const changePokemon = (e: any) =>{
-        if(e){
-            console.log(e.target.value)
+  return (
+    <div className="selectPokemonContainer">
+      <Helmet>
+        <title>Pokemania - Select Pokémon</title>
+      </Helmet>
+      <Header />
 
-            axios.get(`https://pokeapi.co/api/v2/pokemon/${e.target.value}`).then(response => {
-            
-            console.log(response.data)
-            
-            const {types, moves, stats, sprites} = response.data;
-            setPokemon({
-                    types, moves, stats, sprites
-                }
-            )
-        });
-        }   
-     }
-
-    const options = [
-        { value: 'charmander', label: "Charmander" },
-        { value: 'charmeleon', label: "Charmeleon" }
-    ]
-
-  return(
-        <div className="selectPokemonContainer">
-            <Helmet>
-                <title>Pokemania - Select Pokémon</title>
-            </Helmet>
-            <Header />
-
-            <div className="selectBody">
-                <h3>SELEÇÃO DE POKÉMON</h3>
-                
-                <form>
-             
-                    
-                    <select name="select" onChange={changePokemon}>
-                        <option value="" selected disabled>Selecione um pokémon...</option> 
-                        <option value="charmander" >Charmander</option> 
-                        <option value="charmeleon" >Charmeleon</option>
-                    </select>
-                </form>
-
-            </div>
-        </div>
+      <div className="selectBody">
+        <h3>SELEÇÃO DE POKÉMON</h3>
+        <form>
+          <Select options={options} onChange={changePokemon} name="pokemon" />
+          {pokemonName ? (
+            <Select options={movesArray} name="move" />
+          ) : (
+            <Select onChange={changePokemon} isDisabled />
+          )}
+        </form>
+      </div>
+    </div>
   );
-}
+};
 
 export default SelectPokemon;

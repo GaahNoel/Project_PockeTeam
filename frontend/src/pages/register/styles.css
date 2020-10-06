@@ -36,6 +36,7 @@ body{
 #registerMobile{
     display: initial;
     font-size: 35px;
+    margin-top:100px;
 }
 
 form{
@@ -43,21 +44,14 @@ form{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    align-items: center;
 }
 
 label{
     font-size: 1.5em;
 }
-
-input{
-    margin-bottom: 15px;
-    padding-top: 6px;
-    padding-bottom: 6px;
-    border-radius: 11px;
-    width: 100%;
-    height: 1rem;
-    background-color: #EBEBEB;
-    
+.input{
+    width:300px;
 }
 
 button{
