@@ -5,8 +5,24 @@
 }
 
 .selectBody{
+    width: 100%;
     display:flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
+}
+
+form {
+    width: 80%;
+}
+
+.formMoves{
+    
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+#TESTE{
+    width: 50px;
 }
