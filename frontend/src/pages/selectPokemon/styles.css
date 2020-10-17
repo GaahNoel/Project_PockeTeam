@@ -1,3 +1,7 @@
+.header{
+    width: 100%;
+}
+
 .selectPokemonContainer{
     display: flex;
     flex-direction: column;
@@ -10,17 +14,45 @@
     justify-content: center;
     flex-direction: column;
     align-items: center;
+    background-color: #ffffff;
+}
+
+.selectBody img{
+    width: 10rem;
+}
+
+.pokemon{
+    display: flex;
+    justify-content: space-between;
+    width: 60%;
+    margin-top: 2rem;
+    margin-bottom: 5rem;
+    align-items: center;
+}
+
+.pokemon .pokemonSelect{
+    
 }
 
 form {
-    width: 80%;
+    width: 90%;
 }
 
 .formMoves{
-    
     display: flex;
     justify-content: space-between;
-    width: 100%;
+    width: 60%;
+    flex-wrap: wrap;
+}
+
+.formMoves .move1,.formMoves .move2,.formMoves .move3, .formMoves .move4{
+    width: 20rem;
+}
+
+.item{
+
+    width: 60%;
+    margin-top: 4rem;
 }
 
 #TESTE{
